@@ -6,13 +6,6 @@ const int limit = 4000000;
 int main(){
 
 	int seq[limit/2];
-//	for ( int i = 0; i < 10; i++ ){
-//		if ( i < 2 )
-//			seq[i] = i + 1;
-//		else
-//			seq[i] = seq[i - 2] + seq[i - 1];
-//	}
-
 	int s = - 1;
 	int sum = 0;
 	while(seq[s] < limit){
