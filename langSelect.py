@@ -4,10 +4,7 @@ import random
 path = os.path.realpath('projectEuler')
 
 ##Took Ruby and GO out.
-##Considering obj-C and PERL, R, SCALA, Julia.
-languages = [ 'C', 'C++', 'Python', 'Java', 'C#'
-			, 'PHP' ]
-
+##Considering obj-C, PERL, R, SCALA, Julia.
 dict = {
 		'C': '.c',
 		'C++': '.cpp',
@@ -17,7 +14,7 @@ dict = {
 		'PHP': '.php',
 	}
 
-lan = random.choice(languages)
+lan = random.choice(dict.keys())
 pNum = raw_input("Enter problem number: ")
 print("Problem #%s should be done in %s" %
 	(pNum, lan))
