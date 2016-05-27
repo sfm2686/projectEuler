@@ -3,8 +3,8 @@ import random
 
 path = os.path.realpath('projectEuler')
 
-##Took Ruby and Siwft out.
-##Considering obj-C and PERL.
+##Took Ruby and GO out.
+##Considering obj-C and PERL, R, SCALA, Julia.
 languages = [ 'C', 'C++', 'Python', 'Java', 'C#'
 			, 'PHP' ]
 
