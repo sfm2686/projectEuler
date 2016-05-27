@@ -1,8 +1,36 @@
+import os
 import random
 
-languages = [ 'C', 'C++', 'Python', 'Java', 'Ruby', 'C#'
-			, 'PHP','Swift' ]
+path = os.path.realpath('projectEuler')
 
-problem = input("Enter problem number: ")
-print("Problem #%d should be done in %s" %
-	(problem, random.choice(languages)))
+##Took Ruby and Siwft out.
+##Considering obj-C and PERL.
+languages = [ 'C', 'C++', 'Python', 'Java', 'C#'
+			, 'PHP' ]
+
+dict = {
+		'C': '.c',
+		'C++': '.cpp',
+		'Python': '.py',
+		'Java': '.java',
+		'C#': '.cs',
+		'PHP': '.php',
+	}
+
+lan = random.choice(languages)
+pNum = raw_input("Enter problem number: ")
+print("Problem #%s should be done in %s" %
+	(pNum, lan))
+dirName = './problem' + str(pNum)
+
+if not os.path.isdir(dirName):
+	os.mkdir(dirName)
+	dirName = 'problem' + str(pNum)
+	pathToProb = os.path.abspath(dirName)
+	d = os.chdir(pathToProb)
+	ext = dict[lan]
+	name = 'problem' + str(pNum) + ext
+	p = open(name, 'w+')
+	p.close()
+	q = open('question.txt', 'w+')
+	q.close()
