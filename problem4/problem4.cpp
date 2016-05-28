@@ -3,16 +3,8 @@
 using namespace std;
 
 bool isPali(int num);
+
 int main(){
-
-	int pali;
-	cout << "Enter a number :";
-	cin >> pali;
-
-	if ( isPali(pali) )
-		cout << "The number is pali" << endl;
-	else
-		cout << "The number is NOT pali\n" << endl; 
 
 	int biggest = 0;
 	for ( int i = 999; i >= 100; i -- )

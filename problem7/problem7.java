@@ -1,29 +1,42 @@
 import java.util.Scanner;
+import java.lang.*;
 
 public class problem7 {
 
 	public problem7(){}
 
+	/**
+	optimized function to determine if a number
+	is prime or not.
+	*/
 	public static boolean isPrime(int num){
-		if ( num != 2 && num % 2 == 0 )
-			return false;
-		for ( int i = 2; i < (num / 2) + 1; i ++ )
-			if ( num % i == 0 )
-				return false;
-		//Question treats 1 is a non-prime number
 		if ( num == 1 )
 			return false;
+		if ( num < 4 )
+			return true;
+		if ( num % 2 == 0 )
+			return false;
+		if ( num < 9 )
+			return true;
+		if ( num % 3 == 0 )
+			return false;
+		for ( int i = 5; i <= Math.sqrt(num); i += 6 ){
+			if ( num % i == 0 )
+				return false;
+			if ( num % (i + 2) == 0 )
+				return false;
+		}
 		return true;
 	}
 
 	public static int getPrime(int limit){
-		int count = 0;
-		int i = 0;
+		int count = 1;
+		int i = 1;
 
 		while ( count != limit ){
 			if ( isPrime(i) )
 				count ++;
-			i ++;
+			i += 2;
 		}
 		
 		return i - 1;
@@ -33,7 +46,7 @@ public class problem7 {
 		Scanner reader = new Scanner(System.in);
 		System.out.print("Enter a limit: ");
 		int num = reader.nextInt();
-		System.out.println("The largest prime in " + num +
-		" is " + getPrime(num));
+		System.out.println("The " + num + "th prime is " 
+		+ getPrime(num));
 	}
 }
