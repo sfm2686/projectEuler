@@ -1,3 +1,5 @@
+import time
+
 ##Brute force solution
 def isPyth(trip):
 	if ( not(trip[0] < trip[1]) or not(trip[1] < trip[2]) ):
@@ -8,9 +10,9 @@ def isPyth(trip):
 
 def findTrip(limit):
 	telist = [None] * 3
-	for a in range(1, limit + 1):
-		for b in range(2, limit + 1):
-			for c in range(3, limit + 1):
+	for c in range(1, limit / 2):
+		for b in range(2, c):
+			for a in range(3, b):
 				telist[0] = a
 				telist[1] = b
 				telist[2] = c
