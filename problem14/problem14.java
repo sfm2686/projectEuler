@@ -33,9 +33,7 @@ class problem14 {
 		System.out.print(
 		"Enter a limit to find the longest chain under: ");
 		long limit = reader.nextLong();
-		long s = System.currentTimeMillis();
 		long result = start(limit);
-		long e = System.currentTimeMillis();
 		System.out.println(
 		"Initial int for longest chain is " 
 		+ result);
